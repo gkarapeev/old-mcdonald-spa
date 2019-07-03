@@ -24,6 +24,6 @@ body {
 .App {
   display: flex;
   width: 550px;
-  background-color: white;
+  height: max-content;
   flex-direction: column;
 }

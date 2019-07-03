@@ -1,6 +1,7 @@
-import React from 'react';
-import Verse from '../Verse/Verse';
-import './App.css';
+import React from 'react'
+import Paper from '../Paper/Paper'
+import Verse from '../Verse/Verse'
+import './App.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -34,11 +35,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.state.animals.map((animal, index) => {
-          return (
-            <Verse animal={animal.species} sound={animal.sound} />
-          )
-        })}
+        <Paper bg='white'>
+          <h1>
+          The Old MacDonald Song
+          </h1>
+
+          {this.state.animals.map((animal, index) => {
+            return (
+              <Verse animal={animal.species} sound={animal.sound} />
+            )
+          })}
+        </Paper>
       </div>
     );
   }
