@@ -1,0 +1,11 @@
+.Verse {
+  margin-bottom: 10px;
+}
+
+.Verse:last-child {
+  margin-bottom: 0;
+}
+
+.line {
+  display: block;
+}

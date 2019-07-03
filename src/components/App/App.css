@@ -12,12 +12,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #9BE4EA;
 }
 
 #root {
+  display: flex;
+  justify-content: center;
   flex: 1;
 }
 
 .App {
   display: flex;
+  width: 550px;
+  background-color: white;
+  flex-direction: column;
 }
