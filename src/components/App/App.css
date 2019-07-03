@@ -27,3 +27,7 @@ body {
   height: max-content;
   flex-direction: column;
 }
+
+.song {
+  padding: 2rem;
+}

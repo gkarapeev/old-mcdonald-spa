@@ -35,14 +35,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Paper bg='white'>
+        <Paper bg='white' classes={['song']}>
           <h1>
           The Old MacDonald Song
           </h1>
 
           {this.state.animals.map((animal, index) => {
             return (
-              <Verse animal={animal.species} sound={animal.sound} />
+              <Verse animal={animal.species} sound={animal.sound} key={index}/>
             )
           })}
         </Paper>
