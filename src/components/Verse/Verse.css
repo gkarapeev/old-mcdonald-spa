@@ -2,7 +2,11 @@
   margin-bottom: 20px;
 }
 
-.Verse:last-child {
+.Verse:first-of-type {
+  margin-top: 40px;
+}
+
+.Verse:last-of-type {
   margin-bottom: 0;
 }
 

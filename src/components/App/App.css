@@ -1,31 +1,13 @@
-html {
-  height: 100%;
-  display: flex;
-}
-
-body {
-  display: flex;
-  flex: 1;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #9BE4EA;
-}
-
-#root {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-}
-
 .App {
   display: flex;
-  width: 550px;
+  min-width: 560px;
   height: max-content;
   flex-direction: column;
+}
+
+h1 {
+  font-family: ABeeZee;
+  text-align: center;
 }
 
 .song {
