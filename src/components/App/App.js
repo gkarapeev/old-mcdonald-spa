@@ -9,7 +9,6 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      wordsActive: false,
       animals: getAnimals()
     }
   }
@@ -21,22 +20,20 @@ class App extends React.Component {
   }
 
   handleResetAnimals = () => {
-    this.setState({wordsActive: false, animals: getAnimals()})
-  }
-
-  handleActivateWords = () => {
-    this.setState({wordsActive: true})
+    this.setState({animals: getAnimals()})
   }
 
   render() {
+    const wordsActive = this.props.location.pathname !== '/'
+
     return (
         <div className="App">
           <Paper bg='white' classes={['song']}>
             <h1>The Old MacDonald Song</h1>
-            <Nav reset={this.handleResetAnimals} activate={this.handleActivateWords}/>
+            <Nav reset={this.handleResetAnimals} />
             {this.state.animals.map((animal, index) => {
               return (
-                <Verse animal={animal} change={this.handleWordChange} active={this.state.wordsActive} key={index} />
+                <Verse animal={animal} change={this.handleWordChange} active={wordsActive} key={index} />
               )
             })}
           </Paper>

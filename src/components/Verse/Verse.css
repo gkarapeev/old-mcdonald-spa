@@ -1,5 +1,6 @@
 .Verse {
   margin-bottom: 20px;
+  line-height: 1.5em;
 }
 
 .Verse:first-of-type {

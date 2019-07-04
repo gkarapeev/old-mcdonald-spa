@@ -25,7 +25,7 @@ const Word = (props) => {
         <span
           onClick={active ? () => toggleEditing(!editing) : null}
           className={active ? 'word' : ''}>
-          {animal[type]}
+          {active ? newAnimal[type] : animal[type]}
         </span>
       }
     </Fragment>
