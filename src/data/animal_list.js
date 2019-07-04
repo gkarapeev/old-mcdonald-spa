@@ -1,4 +1,4 @@
-const getAnimals = () => [
+export default [
   {
     species: 'cow',
     sound: 'moo',
@@ -25,4 +25,3 @@ const getAnimals = () => [
     id: 4
   }
 ]
-export default getAnimals;
