@@ -11,6 +11,7 @@ nav a:visited {
   padding: 10px 15px;
   color: #00000060;
   text-decoration: none;
+  font-size: 0.9em;
 }
 
 .activeNav {

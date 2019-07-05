@@ -69,6 +69,7 @@ class App extends React.Component {
             null
           }
         </Paper>
+        <a className='bg-credit' href="https://www.freepik.com/free-photos-vectors/background">Background vector created by freepik - www.freepik.com</a>
       </div>
     );
   }

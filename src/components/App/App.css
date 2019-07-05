@@ -56,3 +56,14 @@ h1 {
   transition: all 0.2s ease-out;
   padding: 15px 0;
 }
+
+.App .bg-credit:link,
+.App .bg-credit:visited,
+.App .bg-credit:hover {
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #2e5181;
+  margin-top: 3em;
+  margin-bottom: -3em;
+}
