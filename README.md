@@ -40,23 +40,24 @@ The code in this project is an implementation of the following design document. 
 
 ### 4. Component Documentation
 
-There are 5 components in this project
+Below are the 5 main components in this project and their purposes
+
 ##### App
 * Contains the whole app state.
 * Contains the Add, Change, and Delete functions for custom song verses.
 * Maps each object in the [animal list](src/data) to an individual song verse
 
 ##### Nav
-* Two <NavLink> components from 'react-router-dom' for switching song modes
+* Two &lt;NavLink> components from 'react-router-dom' for switching between 'original' and 'custom' song modes
 
 ##### Paper
 * A flexible component which can be used in many instances of the app. Helps for visual consistency.
 
 ##### Verse
-* Contains the original song lyrics and just changes the species and sound for each animal. Species and sound are both contained in the 'animal' object passed down to <Verse> from <App>
+* Contains the original song lyrics and just changes the species and sound for each animal. Species and sound are both contained in the 'animal' object passed down to &lt;Verse> from &lt;App>
 
 ##### Word
-* Renders either a regular &lt;span> element or an &lt;input> element based on the 'variant' prop. The 'variant' prop comes down from <App> and is ultimately set based on the app route.
+* Renders either a regular &lt;span> element or an &lt;input> element based on the 'variant' prop. The 'variant' prop comes down from &lt;App> and is ultimately set based on the app route.
 
 
 ### 5. Dependencies
@@ -78,23 +79,23 @@ Due to time restrictions, this project was kickstarted with `create-react-app` a
 
 #### `npm start`
 
-Runs the app in the development mode.<br>
+Runs the app in the development mode.&lt;br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+The page will reload if you make edits.&lt;br>
 You will also see any lint errors in the console.
 
 #### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
+Launches the test runner in the interactive watch mode.&lt;br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 #### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
+Builds the app for production to the `build` folder.&lt;br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
+The build is minified and the filenames include the hashes.&lt;br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
