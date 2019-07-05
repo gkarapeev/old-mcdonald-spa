@@ -44,7 +44,7 @@ There are 5 components in this project
 ##### App
 * Contains the whole app state.
 * Contains the Add, Change, and Delete functions for custom song verses.
-* Maps each object in the [animal list](src/data/animal_list) to an individual song verse
+* Maps each object in the [animal list](src/data) to an individual song verse
 
 ##### Nav
 * Two <NavLink> components from 'react-router-dom' for switching song modes
