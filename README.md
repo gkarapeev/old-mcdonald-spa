@@ -42,6 +42,8 @@ The code in this project is an implementation of the following design document. 
 
 Below are the 5 main components in this project and their purposes
 
+![component layout](http://gkarapeev.eu/farm/components.png
+)
 ##### App
 * Contains the whole app state.
 * Contains the Add, Change, and Delete functions for custom song verses.
