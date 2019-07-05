@@ -14,10 +14,16 @@ class App extends React.Component {
     }
   }
 
-  handleWordChange = (event, id, type) => {
+  handleWordChange = (event, index, type) => {
     let newAnimals = [...this.state.customAnimals]
-    newAnimals[id][type] = event.target.value
+    newAnimals[index][type] = event.target.value
     this.setState({ customAnimals: newAnimals })
+  }
+
+  handleAddAnimal = () => {
+    let newAnimals = [...this.state.customAnimals]
+    newAnimals.push({ species: 'animal', sound: 'sound'})
+    this.setState({customAnimals: newAnimals})
   }
 
   handleDeleteAnimal = (id) => {
@@ -27,7 +33,7 @@ class App extends React.Component {
   }
 
   render() {
-    // Determining which variant of the song to display based on the route
+    // Rendering a song variant based on the route
     const variant = this.props.location.pathname === '/' ? 'original' : 'custom'
     const renderAnimals = variant === 'original' ? this.state.animals : this.state.customAnimals
 
@@ -43,6 +49,7 @@ class App extends React.Component {
                 change={this.handleWordChange}
                 deleteAnimal={() => this.handleDeleteAnimal(index)}
                 variant={variant}
+                index={index}
                 key={index}
               />
             )

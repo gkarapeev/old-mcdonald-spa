@@ -2,8 +2,17 @@
   margin-bottom: 20px;
   line-height: 1.5em;
   position: relative;
-  padding-left: 50px;
-  margin-left: -50px;
+  padding: 15px 50px;
+  margin: 0 -50px;
+  border-radius: 6px;
+}
+
+.Verse-custom:hover {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.Verse:hover .delete {
+  opacity: 1;
 }
 
 .Verse:last-of-type {
@@ -16,17 +25,13 @@
 
 .delete {
   position: absolute;
-  left: 0;
+  left: 15px;
   top: 50%;
   height: 22px;
   transform: translateY(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
   cursor: pointer;
-}
-
-.Verse:hover .delete {
-  opacity: 1;
 }
 
 .circle {

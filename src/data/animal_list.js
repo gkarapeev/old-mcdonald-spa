@@ -1,28 +1,23 @@
 const getAnimals = () => [
   {
     species: 'cow',
-    sound: 'moo',
-    id: 0
+    sound: 'moo'
   },
   {
     species: 'dog',
-    sound: 'woof',
-    id: 1
+    sound: 'woof'
   },
   {
     species: 'cat',
-    sound: 'meow',
-    id: 2
+    sound: 'meow'
   },
   {
     species: 'pig',
-    sound: 'oink',
-    id: 3
+    sound: 'oink'
   },
   {
     species: 'rat',
-    sound: 'squeak',
-    id: 4
+    sound: 'squeak'
   }
 ]
 export default getAnimals;

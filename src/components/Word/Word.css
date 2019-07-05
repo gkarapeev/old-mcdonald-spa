@@ -1,15 +1,20 @@
 .word {
-  background-color: #e5e5e5;
-  padding: 3px 5px;
   border-radius: 4px;
+  transition: all 0.1s ease-out;
 }
 
-.word:hover {
+.Verse-custom:hover .word {
+  padding: 3px 5px;
   background-color: #c4c4c4;
 }
 
+.Verse-custom:hover .input,
+.Verse-custom:hover .word:hover {
+  background-color: #b4d4a4;
+}
+
 .input {
-  background-color: #e5e5e5;
+  background-color: #b4d4a4;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -18,7 +23,7 @@
 }
 
 .input:hover {
-  background-color: #e5e5e5;
+  background-color: #b4d4a4;
 }
 
 .input:focus {
