@@ -2,6 +2,8 @@
 
 The Old MacDonald verse generator lets users quickly generate verses for the song by just specifying animal-sound pairs.
 
+![home layout of the SPA](http://gkarapeev.eu/farm/home.png)
+
 ## Table of contents
 
 1. [Project Brief](#1-project-brief)
@@ -21,6 +23,8 @@ The Old MacDonald verse generator lets users quickly generate verses for the son
 ### 2. Design Document
 
 The code in this project is an implementation of the following design document. The 'custom' song mode layout follows its fifth ("Custom layout v5") iteration.
+
+![component layout](http://gkarapeev.eu/farm/guidelines.png)
 
 [View full design document here](Design%20Guidelines)
 
@@ -42,8 +46,8 @@ The code in this project is an implementation of the following design document. 
 
 Below are the 5 main components in this project and their purposes
 
-![component layout](http://gkarapeev.eu/farm/components.png
-)
+![component layout](http://gkarapeev.eu/farm/components.png)
+
 ##### App
 * Contains the whole app state.
 * Contains the Add, Change, and Delete functions for custom song verses.
