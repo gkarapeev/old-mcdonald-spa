@@ -24,7 +24,7 @@ The Old MacDonald verse generator lets users quickly generate verses for the son
 
 The code in this project is an implementation of the following design document. The 'custom' song mode layout follows its fifth ("Custom layout v5") iteration.
 
-![component layout](http://gkarapeev.eu/farm/guidelines.png)
+![component layout](http://gkarapeev.eu/farm/home2.png)
 
 [View full design document here](Design%20Guidelines)
 
