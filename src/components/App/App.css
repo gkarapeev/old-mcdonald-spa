@@ -29,7 +29,7 @@ h1 {
 }
 
 .new-verse:hover #add-new-verse {
-  color: #70a862;
+  color: #8a8a8a;
 }
 
 .edit-icon {
@@ -39,7 +39,7 @@ h1 {
 
 .plus-icon {
   fill:none;
-  stroke:#70a862;
+  stroke:#66BB6A;
   stroke-width:2;
   stroke-linejoin:round;
 }

@@ -4,11 +4,11 @@ The Old MacDonald verse generator lets users quickly generate verses for the son
 
 ## Table of content
 
-1. Project Brief
-2. Design Document
-3. Project Organization
-4. Component Documentation
-5. Information about package scripts
+1. [Project Brief](#1-Project-Brief)
+2. [Design Document](#2-Design-Document)
+3. [Project Organization](#3-Project-Organization)
+4. [Component Documentation](#4-Component-Documentation)
+5. [Information about package scripts](#5-Information-about-package-scripts)
 
 ### 1. Project Brief
 
@@ -16,7 +16,9 @@ More info.
 
 ### 2. Design Document
 
-Design doc. [link](#2-design-document)
+The code in this project is an implementation of the following design document. The 'custom' song mode layout follows its fifth ("Custom layout v5") iteration.
+
+[View full design PDF here](Design%20Guidelines)
 
 ### 3. Project Organization
 
