@@ -1,8 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Welcome to Old MacDonald verse generator
 
-## Available Scripts
+The Old MacDonald verse generator lets users quickly generate verses for the song by just specifying animal-sound pairs.
 
-In the project directory, you can run:
+## How to manage this project
 
 ### `npm start`
 
