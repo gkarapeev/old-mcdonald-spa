@@ -5,7 +5,7 @@ import './Nav.css'
 const Nav = (props) => {
   return(
     <nav>
-      <NavLink to={'/'} onClick={props.reset} exact activeClassName='activeNav'>
+      <NavLink to={'/'} exact activeClassName='activeNav'>
         <span>original</span>
       </NavLink>
       <NavLink to={'/custom'} activeClassName='activeNav'>

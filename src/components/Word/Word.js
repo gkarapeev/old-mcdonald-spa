@@ -1,10 +1,11 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import './Word.css'
 
 const Word = (props) => {
-  const { type, animal, change, active } = props
+  const { type, animal, change, variant } = props
   const [editing, toggleEditing] = useState(false)
   const [newAnimal, setNewAnimal] = useState(animal)
+  useEffect(() => {setNewAnimal(props.animal)}, [props.animal])
 
   return (
     <Fragment>
@@ -23,9 +24,9 @@ const Word = (props) => {
         </input>
         :
         <span
-          onClick={active ? () => toggleEditing(!editing) : null}
-          className={active ? 'word' : ''}>
-          {active ? newAnimal[type] : animal[type]}
+          onClick={variant === 'custom' ? () => toggleEditing(!editing) : null}
+          className={variant === 'custom' ? 'word' : ''}>
+          {newAnimal[type]}
         </span>
       }
     </Fragment>

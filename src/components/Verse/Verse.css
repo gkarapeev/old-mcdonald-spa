@@ -2,10 +2,8 @@
   margin-bottom: 20px;
   line-height: 1.5em;
   position: relative;
-}
-
-.Verse:first-of-type {
-  margin-top: 40px;
+  padding-left: 50px;
+  margin-left: -50px;
 }
 
 .Verse:last-of-type {
@@ -18,27 +16,24 @@
 
 .delete {
   position: absolute;
-  left: -35px;
+  left: 0;
   top: 50%;
+  height: 22px;
   transform: translateY(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .Verse:hover .delete {
   opacity: 1;
 }
 
-#delShape {
-  width: 22px;
-  height: 22px;
-}
-
 .circle {
   fill:none;
   stroke:#DFA9A9;
   stroke-width:2;
-  transition: all 0.2s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .line {
@@ -47,18 +42,18 @@
   stroke-width:2;
   stroke-linejoin:round;
   transform-origin: center center;
-  transition: all 0.2s ease-out;
+  transition: all 0.1s ease-out;
 }
 
-#delShape:hover .line,
-#delShape:hover .circle {
+#delete-icon:hover .line,
+#delete-icon:hover .circle {
   stroke: #dd6c6c;
 }
 
-#delShape:hover .line-1 {
+#delete-icon:hover .line-1 {
   transform: rotate(45deg)
 }
 
-#delShape:hover .line-2 {
+#delete-icon:hover .line-2 {
   transform: rotate(-45deg)
 }

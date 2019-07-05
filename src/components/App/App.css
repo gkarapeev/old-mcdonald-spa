@@ -11,5 +11,45 @@ h1 {
 }
 
 .song {
-  padding: 3.5rem;
+  padding: 3.5rem 5.5rem;
+  min-height: 900px;
+}
+
+.new-verse {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.new-verse:hover #add-icon {
+  transform: rotate(90deg)
+}
+
+.new-verse:hover #add-new-verse {
+  color: #70a862;
+}
+
+.edit-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.plus-icon {
+  fill:none;
+  stroke:#70a862;
+  stroke-width:2;
+  stroke-linejoin:round;
+}
+
+#add-icon {
+  transform-origin: center center;
+  transition: all 0.2s ease-out;
+}
+
+#add-new-verse {
+  color: #505050;
+  font-weight: 500;
+  margin-left: 12px;
+  transition: all 0.2s ease-out;
 }
