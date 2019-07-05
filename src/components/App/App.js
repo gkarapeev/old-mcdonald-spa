@@ -14,7 +14,7 @@ class App extends React.Component {
     }
   }
 
-  handleWordChange = (event, index, type) => {
+  handleChangeAnimal = (event, index, type) => {
     let newAnimals = [...this.state.customAnimals]
     newAnimals[index][type] = event.target.value
     this.setState({ customAnimals: newAnimals })
@@ -46,7 +46,7 @@ class App extends React.Component {
             return (
               <Verse
                 animal={animal}
-                change={this.handleWordChange}
+                change={this.handleChangeAnimal}
                 deleteAnimal={() => this.handleDeleteAnimal(index)}
                 variant={variant}
                 index={index}
