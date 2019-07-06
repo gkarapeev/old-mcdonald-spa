@@ -33,6 +33,10 @@ ul li:focus {
   cursor: pointer;
 }
 
+.new-verse:focus {
+  outline: none;
+}
+
 .new-verse:hover #add-icon {
   transform: rotate(90deg)
 }
