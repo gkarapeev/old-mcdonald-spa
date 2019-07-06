@@ -3,14 +3,20 @@ import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
 const Nav = (props) => {
-  return(
+  return (
     <nav>
-      <NavLink to={'/'} exact activeClassName='activeNav'>
-        <span>original</span>
-      </NavLink>
-      <NavLink to={'/custom'} activeClassName='activeNav'>
-        <span>custom</span>
-      </NavLink>
+      <ul>
+        <li>
+          <NavLink to={'/'} exact activeClassName='activeNav' tabIndex={1}>
+            <span>original</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={'/custom'} activeClassName='activeNav' tabIndex={2}>
+            <span>custom</span>
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   )
 };

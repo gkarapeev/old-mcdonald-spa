@@ -6,12 +6,24 @@ nav {
   margin: 3em 0;
 }
 
+nav ul {
+  display: flex;
+}
+
+nav li {
+  display: flex;
+}
+
 nav a,
 nav a:visited {
   padding: 10px 15px;
   color: #00000060;
   text-decoration: none;
   font-size: 0.9em;
+}
+
+nav a:focus {
+  outline: none;
 }
 
 .activeNav {

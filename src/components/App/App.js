@@ -42,20 +42,23 @@ class App extends React.Component {
         <Paper bg='white' classes={['song']}>
           <h1>The Old MacDonald Song</h1>
           <Nav />
-          {renderAnimals.map((animal, index) => {
-            return (
-              <Verse
-                animal={animal}
-                change={this.handleChangeAnimal}
-                deleteAnimal={() => this.handleDeleteAnimal(index)}
-                variant={variant}
-                index={index}
-                key={index}
-              />
-            )
-          })}
+          <ul>
+            {renderAnimals.map((animal, index) => {
+              return (
+                <li tabIndex={index + 2} key={index}>
+                  <Verse
+                    animal={animal}
+                    change={this.handleChangeAnimal}
+                    deleteAnimal={() => this.handleDeleteAnimal(index)}
+                    variant={variant}
+                    index={index}
+                />
+                </li>
+              )
+            })}
+          </ul>
           {variant === 'custom' ?
-            <div className='new-verse' onClick={this.handleAddAnimal}>
+            <div className='new-verse' onClick={this.handleAddAnimal} tabIndex={renderAnimals.length + 1}>
               <svg className='edit-icon' id='add-icon' viewBox='0 0 22 22'>
                 <circle className="plus-icon" cx="11" cy="11" r="10" />
                 <line className="plus-icon" x1="11" y1="6" x2="11" y2="16" />
@@ -69,7 +72,7 @@ class App extends React.Component {
             null
           }
         </Paper>
-        <a className='bg-credit' href="https://www.freepik.com/free-photos-vectors/background">Background vector created by freepik - www.freepik.com</a>
+        <a className='bg-credit' href="https://www.freepik.com/free-photos-vectors/background" tabIndex={-1}>Background vector created by freepik - www.freepik.com</a>
       </div>
     );
   }

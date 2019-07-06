@@ -17,6 +17,16 @@ h1 {
   min-height: 900px;
 }
 
+ul {
+  margin: 0;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+ul li:focus {
+  outline: none;
+}
+
 .new-verse {
   display: flex;
   align-items: center;
