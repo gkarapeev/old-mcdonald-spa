@@ -1,6 +1,5 @@
 .App {
   display: flex;
-  min-width: 560px;
   height: max-content;
   flex-direction: column;
   margin-top: 5em;
@@ -76,4 +75,38 @@ ul li:focus {
   color: #2e5181;
   margin-top: 3em;
   margin-bottom: -3em;
+}
+
+@media screen and (max-width: 560px) {
+
+  .App {
+    margin: 1em;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  .song {
+    padding: 1em 2em;
+  }
+
+  .App .bg-credit:link {
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .App {
+    margin: 0
+  }
+
+  .song {
+    border-radius: 0;
+    padding: 1em;
+  }
+
+  .App .bg-credit:link {
+    margin-top: 1em;
+  }
 }

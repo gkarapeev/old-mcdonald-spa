@@ -1,5 +1,4 @@
 .Verse {
-  margin-bottom: 20px;
   line-height: 1.5em;
   position: relative;
   padding: 15px 50px;
@@ -13,10 +12,6 @@
 
 .Verse:hover .delete {
   opacity: 1;
-}
-
-.Verse:last-of-type {
-  margin-bottom: 0;
 }
 
 .song-line {
@@ -61,4 +56,17 @@
 
 #delete-icon:hover .line-2 {
   transform: rotate(-45deg)
+}
+
+@media screen and (max-width: 560px) {
+
+  .Verse {
+    padding: 15px 15px;
+    margin: 0;
+  }
+
+  .delete {
+    left: unset;
+    right: 15px;
+  }
 }
