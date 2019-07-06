@@ -5,9 +5,14 @@ import './Verse.css'
 
 const Verse = (props) => {
   const { animal, index, variant, deleteAnimal } = props;
+  
+  const classes = ['Verse']
+  if(variant === 'custom') {
+    classes.push('Verse-custom')
+  }
 
   return(
-    <div className={variant === 'original' ? 'Verse' : 'Verse Verse-custom'}>
+    <div className={classes.join(' ')}>
       <span className='song-line'>Old MacDonald had a farm, E-I-E-I-O,</span>
       <span className='song-line'>And on his farm he had a <Word type='species' animal={animal} variant={variant} change={props.change} index={index}/>, E-I-E-I-O.</span>
       <span className='song-line'>With a <Word type='sound' animal={animal} variant={variant} change={props.change} index={index}/> {animal.sound} here and a {animal.sound} there,</span>
