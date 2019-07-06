@@ -6,23 +6,29 @@ const Word = (props) => {
   const [editing, toggleEditing] = useState(false)
   const [newAnimal, setNewAnimal] = useState(animal)
   useEffect(() => {setNewAnimal(props.animal)}, [props.animal])
-
+  
   return (
     <Fragment>
       {editing ?
-        <input
-          type='text'
-          value={newAnimal[type]}
-          maxLength='8'
-          onChange={(e) => setNewAnimal({...animal, [type]: e.target.value})}
-          className='word input'
-          style={{width: newAnimal[type].length * 0.5 + 0.8 + 'rem', maxWidth:'100px', minWidth:'40px'}}
-          autoFocus
-          onBlur={(event) => {
-            change(event, index, type)
-            toggleEditing(!editing)
-          }}>
-        </input>
+        <form onSubmit={(event) => {
+          change(event.target.firstChild.value, index, type)
+          event.preventDefault()
+          event.target.firstChild.blur()}}
+        >
+          <input
+            type='text'
+            value={newAnimal[type]}
+            maxLength='8'
+            onChange={(e) => setNewAnimal({...animal, [type]: e.target.value})}
+            className='word input'
+            style={{width: newAnimal[type].length * 0.5 + 0.8 + 'rem', maxWidth:'100px', minWidth:'40px'}}
+            autoFocus
+            onBlur={(event) => {
+              change(event.target.value, index, type)
+              toggleEditing(!editing)
+            }}>
+          </input>
+        </form>
         :
         <span
           onClick={variant === 'custom' ? () => toggleEditing(!editing) : null}

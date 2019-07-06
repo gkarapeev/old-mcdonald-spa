@@ -14,9 +14,9 @@ class App extends React.Component {
     }
   }
 
-  handleChangeAnimal = (event, index, type) => {
+  handleChangeAnimal = (value, index, type) => {
     let newAnimals = [...this.state.customAnimals]
-    newAnimals[index][type] = event.target.value
+    newAnimals[index][type] = value
     this.setState({ customAnimals: newAnimals })
   }
 
