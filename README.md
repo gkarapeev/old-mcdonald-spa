@@ -64,6 +64,7 @@ Below are the 5 main components in this project and their purposes
 
 ##### Word
 * Renders either a regular &lt;span> element or an &lt;input> element based on the 'variant' prop. The 'variant' prop comes down from &lt;App> and is ultimately set based on the app route.
+* This component also holds a temporary local state hook to store the new value for an animal or sound before it is confirmed and sent back up to the main app state. This is done in order to avoid updating every 'sound' word in the current verse on every single keypress, which would be distracting for the user.
 
 
 ### 5. Dependencies
