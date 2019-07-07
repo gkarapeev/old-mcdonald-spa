@@ -34,8 +34,8 @@ class App extends React.Component {
 
   render() {
     // Rendering a song variant based on the route
-    const variant = this.props.location.pathname === '/' ? 'original' : 'custom'
-    const renderAnimals = variant === 'original' ? this.state.animals : this.state.customAnimals
+    const custom = this.props.location.pathname === '/custom'
+    const renderAnimals = custom ? this.state.customAnimals : this.state.animals
 
     return (
       <div className="App">
@@ -50,14 +50,14 @@ class App extends React.Component {
                     animal={animal}
                     change={this.handleChangeAnimal}
                     deleteAnimal={() => this.handleDeleteAnimal(index)}
-                    variant={variant}
+                    custom
                     index={index}
                 />
                 </li>
               )
             })}
           </ul>
-          {variant === 'custom' ?
+          {custom ?
             <div className='new-verse' onClick={this.handleAddAnimal} tabIndex={renderAnimals.length + 1}>
               <svg className='edit-icon' id='add-icon' viewBox='0 0 22 22'>
                 <circle className="plus-icon" cx="11" cy="11" r="10" />

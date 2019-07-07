@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import './Word.css'
 
 const Word = (props) => {
-  const { type, animal, index, change, variant } = props
+  const { type, animal, index, change, custom } = props
   const [editing, toggleEditing] = useState(false)
   const [newAnimal, setNewAnimal] = useState(animal)
   useEffect(() => {setNewAnimal(props.animal)}, [props.animal])
@@ -31,8 +31,8 @@ const Word = (props) => {
         </form>
         :
         <span
-          onClick={variant === 'custom' ? () => toggleEditing(!editing) : null}
-          className={variant === 'custom' ? 'word' : ''}>
+          onClick={custom ? () => toggleEditing(!editing) : null}
+          className={custom ? 'word' : ''}>
           {newAnimal[type]}
         </span>
       }
