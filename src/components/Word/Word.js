@@ -31,8 +31,8 @@ const Word = (props) => {
         </form>
         :
         <span
-          onClick={custom ? () => toggleEditing(!editing) : null}
-          className={custom ? 'word' : ''}>
+          onClick={custom ? () => null: toggleEditing(!editing)}
+          className={custom ? '' : 'word'}>
           {newAnimal[type]}
         </span>
       }
