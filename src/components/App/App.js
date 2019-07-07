@@ -50,7 +50,7 @@ class App extends React.Component {
                     animal={animal}
                     change={this.handleChangeAnimal}
                     deleteAnimal={() => this.handleDeleteAnimal(index)}
-                    custom
+                    custom={custom}
                     index={index}
                 />
                 </li>
