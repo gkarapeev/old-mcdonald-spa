@@ -26,6 +26,66 @@ ul li:focus {
   outline: none;
 }
 
+.Verse {
+  line-height: 1.5em;
+  position: relative;
+  padding: 15px 50px;
+  margin: 0 -50px;
+  border-radius: 6px;
+}
+
+.Verse-custom:hover {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.Verse:hover .delete {
+  opacity: 1;
+}
+
+.song-line {
+  display: block;
+}
+
+.delete {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  height: 22px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.circle {
+  fill:none;
+  stroke:#DFA9A9;
+  stroke-width:2;
+  transition: all 0.1s ease-out;
+}
+
+.line {
+  fill:none;
+  stroke:#DFA9A9;
+  stroke-width:2;
+  stroke-linejoin:round;
+  transform-origin: center center;
+  transition: all 0.1s ease-out;
+}
+
+#delete-icon:hover .line,
+#delete-icon:hover .circle {
+  stroke: #dd6c6c;
+}
+
+#delete-icon:hover .line-1 {
+  transform: rotate(45deg)
+}
+
+#delete-icon:hover .line-2 {
+  transform: rotate(-45deg)
+}
+
 .new-verse {
   display: flex;
   align-items: center;
@@ -95,6 +155,16 @@ ul li:focus {
     padding: 1em 2em;
   }
 
+  .Verse {
+    padding: 15px 15px;
+    margin: 0;
+  }
+
+  .delete {
+    left: unset;
+    right: 15px;
+  }
+
   .App .bg-credit:link {
     margin-bottom: 1em;
   }
@@ -112,78 +182,5 @@ ul li:focus {
 
   .App .bg-credit:link {
     margin-top: 1em;
-  }
-}
-
-.Verse {
-  line-height: 1.5em;
-  position: relative;
-  padding: 15px 50px;
-  margin: 0 -50px;
-  border-radius: 6px;
-}
-
-.Verse-custom:hover {
-  background-color: hsl(0, 0%, 95%);
-}
-
-.Verse:hover .delete {
-  opacity: 1;
-}
-
-.song-line {
-  display: block;
-}
-
-.delete {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  height: 22px;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
-}
-
-.circle {
-  fill:none;
-  stroke:#DFA9A9;
-  stroke-width:2;
-  transition: all 0.1s ease-out;
-}
-
-.line {
-  fill:none;
-  stroke:#DFA9A9;
-  stroke-width:2;
-  stroke-linejoin:round;
-  transform-origin: center center;
-  transition: all 0.1s ease-out;
-}
-
-#delete-icon:hover .line,
-#delete-icon:hover .circle {
-  stroke: #dd6c6c;
-}
-
-#delete-icon:hover .line-1 {
-  transform: rotate(45deg)
-}
-
-#delete-icon:hover .line-2 {
-  transform: rotate(-45deg)
-}
-
-@media screen and (max-width: 560px) {
-
-  .Verse {
-    padding: 15px 15px;
-    margin: 0;
-  }
-
-  .delete {
-    left: unset;
-    right: 15px;
   }
 }

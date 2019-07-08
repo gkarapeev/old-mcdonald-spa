@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../Nav/Nav'
 import Paper from '../Paper/Paper'
-import parseLine from '../../utils/parseLine'
+import parseVerse from '../../utils/parseVerse'
 import cloneDeep from 'lodash.clonedeep'
 import './App.css'
 
@@ -28,13 +28,7 @@ class App extends React.Component {
     let verses = []
 
     for (let i = 0; i < song.verses.length; i++) {
-      let lines = []
-
-      for (let j = 0; j < song.lines.length; j++) {
-        lines.push(parseLine(i, j, song, this, custom))
-      }
-
-      verses.push(lines)
+      verses.push(parseVerse(i, song, this, custom))
     }
 
     return verses
