@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from '../Nav/Nav'
 import Paper from '../Paper/Paper'
 import parseLine from '../../utils/parseLine'
+import cloneDeep from 'lodash.clonedeep'
 import './App.css'
 
 import old_macdonald from '../../data/old_macdonald'
@@ -17,9 +18,9 @@ class App extends React.Component {
   }
 
   handleWordChange = (verseIndex, wordNum, newValue) => {
-    let newSong = { ...this.state.customSong }
+    let newSong = cloneDeep(this.state.customSong)
     newSong.verses[verseIndex]['word' + wordNum] = newValue
-    
+
     this.setState({ customSong: newSong })
   }
 
