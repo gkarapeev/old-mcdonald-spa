@@ -5,15 +5,12 @@ import parseVerse from '../../utils/parseVerse'
 import cloneDeep from 'lodash.clonedeep'
 import './App.css'
 
-import old_macdonald from '../../data/old_macdonald'
-import georgi_song from '../../data/georgi_song'
-
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      song: old_macdonald,
-      customSong: old_macdonald
+      song: this.props.song,
+      customSong: this.props.song
     }
   }
 
@@ -90,14 +87,14 @@ class App extends React.Component {
 
   render() {
     // Rendering a song variant based on the route
-    const custom = this.props.location.pathname === '/custom'
+    const custom = this.props.match.params.mode === 'custom'
     const renderSong = custom ? this.state.customSong : this.state.song
 
     return (
       <div className="App">
         <Paper bg='white' classes={['song']}>
           <h1>{this.state.song.title}</h1>
-          <Nav />
+          <Nav song={this.state.song.path}/>
           <ul>
             {this.generateVerses(renderSong, custom).map((verse, index) => {
               return (

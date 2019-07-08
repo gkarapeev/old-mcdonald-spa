@@ -7,12 +7,12 @@ const Nav = (props) => {
     <nav>
       <ul>
         <li>
-          <NavLink to={'/'} exact activeClassName='activeNav' tabIndex={1}>
+          <NavLink to={props.song + '/original'} exact activeClassName='activeNav' tabIndex={1}>
             <span>original</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to={'/custom'} activeClassName='activeNav' tabIndex={2}>
+          <NavLink to={props.song + '/custom'} activeClassName='activeNav' tabIndex={2}>
             <span>custom</span>
           </NavLink>
         </li>

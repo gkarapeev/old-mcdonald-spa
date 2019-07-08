@@ -1,5 +1,6 @@
 export default {
   title: 'The Georgi Song',
+  path: '/georgi-song',
   verses: [
     {
       word1: 'Gesh',

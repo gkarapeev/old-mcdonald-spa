@@ -1,5 +1,6 @@
 export default {
   title: 'The Old MacDonald Song',
+  path: '/old-macdonald',
   verses: [
     {
       word1: 'cow',
