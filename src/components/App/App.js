@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from '../Nav/Nav'
+import SongNav from '../SongNav/SongNav'
 import Paper from '../Paper/Paper'
 import parseVerse from '../../utils/parseVerse'
 import cloneDeep from 'lodash.clonedeep'
@@ -14,6 +15,37 @@ class App extends React.Component {
     }
   }
 
+  handleChangeSong = (direction) => {
+    let songList = this.props.songList
+    let thisTitle = this.state.song.title
+    let thisIndex
+    let nextIndex
+
+    for (let i = 0; i < songList.length; i++) {
+      if (songList[i].title === thisTitle) {
+        thisIndex = i
+        break
+      }
+    }
+
+    if (direction === 'next') {
+      if (thisIndex === songList.length - 1) {
+        nextIndex = 0
+      } else {
+        nextIndex = thisIndex + 1
+      }
+    } else {
+      if (thisIndex === 0) {
+        nextIndex = songList.length - 1
+      } else {
+        nextIndex = thisIndex - 1
+      }
+    }
+
+    let nextPath = songList[nextIndex].path
+    this.props.history.push(nextPath + '/original')
+  }
+
   handleChangeWord = (verseIndex, wordNum, newValue) => {
     let newSong = cloneDeep(this.state.customSong)
     newSong.verses[verseIndex]['word' + wordNum] = newValue
@@ -26,19 +58,19 @@ class App extends React.Component {
     let wordCount = Object.keys(newSong.verses[0]).length
     let newVerse = {}
 
-    for (let i=1; i <= wordCount; i++) {
+    for (let i = 1; i <= wordCount; i++) {
       newVerse['word' + i] = 'word ' + i
     }
 
     newSong.verses.push(newVerse)
-    this.setState({customSong: newSong})
+    this.setState({ customSong: newSong })
   }
 
   handleDeleteVerse = (i) => {
     let newVerses = cloneDeep(this.state.customSong.verses)
     newVerses.splice(i, 1)
 
-    this.setState({customSong: {...this.state.customSong, verses: newVerses}})
+    this.setState({ customSong: { ...this.state.customSong, verses: newVerses } })
   }
 
   generateVerses = (song, custom) => {
@@ -94,7 +126,8 @@ class App extends React.Component {
       <div className="App">
         <Paper bg='white' classes={['song']}>
           <h1>{this.state.song.title}</h1>
-          <Nav song={this.state.song.path}/>
+          <SongNav change={this.handleChangeSong} />
+          <Nav song={this.state.song.path} />
           <ul>
             {this.generateVerses(renderSong, custom).map((verse, index) => {
               return (

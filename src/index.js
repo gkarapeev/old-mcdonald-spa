@@ -15,7 +15,7 @@ ReactDOM.render(
     <Switch>
       {song_list.map((song, index) => {
         return (
-          <Route path={song.path + '/:mode'} render={(props) => <App {...props} song={song}/>} key={index}/>
+          <Route path={song.path + '/:mode'} render={(props) => <App {...props} song={song} songList={song_list}/>} key={index}/>
         )
       })}
       <Redirect to='/old-macdonald/original' />

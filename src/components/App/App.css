@@ -4,16 +4,20 @@
   flex-direction: column;
   margin-top: 5em;
   margin-bottom: 5em;
+  min-width: 560px;
 }
 
 h1 {
   font-family: ABeeZee;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .song {
   padding: 3.5rem 5.5rem;
   min-height: 900px;
+  position: relative;
 }
 
 ul {
@@ -145,10 +149,12 @@ ul li:focus {
 
   .App {
     margin: 1em;
+    min-width: unset;
   }
 
   h1 {
     font-size: 1.6em;
+    max-width: 260px;
   }
 
   .song {
@@ -175,8 +181,11 @@ ul li:focus {
     margin: 0
   }
 
+  h1 {
+    max-width: 220px;
+  }
+
   .song {
-    border-radius: 0;
     padding: 1em;
   }
 
