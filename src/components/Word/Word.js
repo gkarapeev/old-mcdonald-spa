@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import './Word.css'
 
 const Word = (props) => {
-  const { verse, wordNum, wordValue, change } = props
+  const { verse, wordNum, wordValue, change, active } = props
   const [editing, toggleEditing] = useState(false)
   const [newWord, setNewWord] = useState(wordValue)
   useEffect(() => {setNewWord(wordValue)}, [wordValue])
@@ -31,8 +31,8 @@ const Word = (props) => {
         </form>
         :
         <span
-          onClick={() => toggleEditing(!editing)}
-          className={'word'}>
+          onClick={active ? () => toggleEditing(!editing) : null}
+          className={active ? 'word' : ''}>
           {newWord}
         </span>
       }

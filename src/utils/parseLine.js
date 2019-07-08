@@ -1,13 +1,16 @@
 import React from 'react'
 import Word from '../components/Word/Word'
 
-// Reads a single item from the 'lines' array in a song object
-// Generates a <Word/> component with each special word tag it finds (e.g. *1*)
+// 1. Reads a single item from the 'lines' array in a song object
+// 2. Parses the string for special words, marked as a number between two asterisk symbols (e.g. *2*)
+// 3. Generates a <Word/> component with each special word tag it finds
+// 4. Returns an array containing plain strings and/or <Word/> components
 
-function parseLine(verseIndex, lineIndex, song, scope) {
+function parseLine(verseIndex, lineIndex, song, scope, custom) {
   const specialWord = /\*[0-9]+\*/
   let lineToParse = song.lines[lineIndex]
   let parsedLine = []
+  let passedNums = []
   let match
   let i = 1
 
@@ -15,26 +18,32 @@ function parseLine(verseIndex, lineIndex, song, scope) {
     // Everything before the matched pattern
     let chunk1 = lineToParse.slice(0, match.index)
 
-    // The word which corresponds to matched pattern
+    // The word number
     let wordNumber = parseInt(match[0].replace('*', ''))
+    
+    // The word which corresponds to matched pattern
     let realWord = song.verses[verseIndex]['word' + wordNumber]
-
+    
     // The remainder of the line
     let chunk3 = lineToParse.slice(match.index + match[0].length)
-
+    
     // Transforming the parsed chunks and pushing them to an array
-    parsedLine.push(
-      chunk1,
-      <Word
-        verse={verseIndex}
-        wordNum={wordNumber}
-        wordValue={realWord}
-        change={scope.handleWordChange}
-        key={i} />
-    )
+    const isPassed = passedNums.indexOf(wordNumber) !== -1
+    const wordJSX = <Word
+                      verse={verseIndex}
+                      wordNum={wordNumber}
+                      wordValue={realWord}
+                      change={scope.handleWordChange}
+                      active={custom}
+                      key={i} />
 
+    const word = isPassed ? realWord : wordJSX
+    parsedLine.push(chunk1, word)
+    
     // Feeding the unparsed remainder back into the loop
     lineToParse = chunk3
+
+    passedNums.push(wordNumber)
     i++
   }
 

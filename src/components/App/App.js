@@ -24,14 +24,14 @@ class App extends React.Component {
     this.setState({ customSong: newSong })
   }
 
-  generateVerses = (song) => {
+  generateVerses = (song, custom) => {
     let verses = []
 
     for (let i = 0; i < song.verses.length; i++) {
       let lines = []
 
       for (let j = 0; j < song.lines.length; j++) {
-        lines.push(parseLine(i, j, song, this))
+        lines.push(parseLine(i, j, song, this, custom))
       }
 
       verses.push(lines)
@@ -52,7 +52,7 @@ class App extends React.Component {
           <h1>{this.state.song.title}</h1>
           <Nav />
           <ul>
-            {this.generateVerses(renderSong).map((verse, index) => {
+            {this.generateVerses(renderSong, custom).map((verse, index) => {
               return (
                 <li key={index}>
                   <div className={custom ? 'Verse Verse-custom' : 'Verse'}>
