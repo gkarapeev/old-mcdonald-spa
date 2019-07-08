@@ -36,7 +36,7 @@ function parseVerse(verseIndex, song, scope, custom) {
                         verse={verseIndex}
                         wordNum={wordNumber}
                         wordValue={realWord}
-                        change={scope.handleWordChange}
+                        change={scope.handleChangeWord}
                         active={custom}
                         key={i} />
 

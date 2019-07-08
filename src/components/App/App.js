@@ -17,11 +17,31 @@ class App extends React.Component {
     }
   }
 
-  handleWordChange = (verseIndex, wordNum, newValue) => {
+  handleChangeWord = (verseIndex, wordNum, newValue) => {
     let newSong = cloneDeep(this.state.customSong)
     newSong.verses[verseIndex]['word' + wordNum] = newValue
 
     this.setState({ customSong: newSong })
+  }
+
+  handleAddVerse = () => {
+    let newSong = cloneDeep(this.state.customSong)
+    let wordCount = Object.keys(newSong.verses[0]).length
+    let newVerse = {}
+
+    for (let i=1; i <= wordCount; i++) {
+      newVerse['word' + i] = 'word ' + i
+    }
+
+    newSong.verses.push(newVerse)
+    this.setState({customSong: newSong})
+  }
+
+  handleDeleteVerse = (i) => {
+    let newVerses = cloneDeep(this.state.customSong.verses)
+    newVerses.splice(i, 1)
+
+    this.setState({customSong: {...this.state.customSong, verses: newVerses}})
   }
 
   generateVerses = (song, custom) => {
@@ -58,7 +78,7 @@ class App extends React.Component {
                       )
                     })}
                     {custom ?
-                      <div className='delete'>
+                      <div className='delete' onClick={() => this.handleDeleteVerse(index)}>
                         <svg className='edit-icon' id='delete-icon' viewBox='0 0 22 22'>
                           <circle className="circle" cx="11" cy="11" r="10" />
                           <line className="line line-1" x1="6" y1="11" x2="16" y2="11" />
@@ -73,7 +93,7 @@ class App extends React.Component {
             })}
           </ul>
           {custom ?
-            <div className='new-verse' onClick={this.handleAddAnimal} tabIndex={this.state.song.verses.length + 1}>
+            <div className='new-verse' onClick={this.handleAddVerse} tabIndex={this.state.song.verses.length + 1}>
               <svg className='edit-icon' id='add-icon' viewBox='0 0 22 22'>
                 <circle className="plus-icon" cx="11" cy="11" r="10" />
                 <line className="plus-icon" x1="11" y1="6" x2="11" y2="16" />
