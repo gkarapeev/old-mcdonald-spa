@@ -19,6 +19,7 @@ body {
 #root {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1;
   background-color: #9BE4EA;
   background-position: bottom;

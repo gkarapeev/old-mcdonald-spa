@@ -69,7 +69,7 @@ class App extends React.Component {
 
   getAddButton = (custom) => {
     const buttonJSX = (
-      <div className='new-verse' onClick={this.handleAddVerse} tabIndex={this.state.song.verses.length + 1}>
+      <div className='new-verse' onClick={this.handleAddVerse} tabIndex={this.state.song.verses.length + 2}>
         <svg className='edit-icon' id='add-icon' viewBox='0 0 22 22'>
           <circle className="plus-icon" cx="11" cy="11" r="10" />
           <line className="plus-icon" x1="11" y1="6" x2="11" y2="16" />
@@ -98,7 +98,7 @@ class App extends React.Component {
           <ul>
             {this.generateVerses(renderSong, custom).map((verse, index) => {
               return (
-                <li key={index}>
+                <li key={index} tabIndex={index + 3}>
                   <div className={custom ? 'Verse Verse-custom' : 'Verse'}>
                     {verse.map((line, idx) => {
                       return (
