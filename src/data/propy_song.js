@@ -3,31 +3,25 @@ export default {
   path: '/propy-song',
   verses: [
     {
-      word1: 'cow',
-      word2: 'moo'
+      word1: 'Yo',
+      word2: 'Propy',
+      word3: 'stoppy'
     },
     {
-      word1: 'dog',
-      word2: 'woof'
+      word1: 'Woof',
+      word2: 'Doggy',
+      word3: 'groggy'
     },
     {
-      word1: 'cat',
-      word2: 'meow'
-    },
-    {
-      word1: 'pig',
-      word2: 'oink'
-    },
-    {
-      word1: 'rat',
-      word2: 'squeak'
+      word1: 'Ok',
+      word2: 'Silly',
+      word3: 'chilly'
     }
   ],
   lines: [
-    'Aideeee az sam *1* propy, *2*,',
-    'Aideeee az sam *1* propy, *2*',
-    'Aideeee az sam *1* propy, *2*',
-    'Aideeee az sam *1* propy, *2*',
-    'Aideeee az sam *1* propy, *2*'
+    '*1*, *1*, this is the *2* song,',
+    'We\'re called *2*, *2*, *2*!',
+    'We only go forward,',
+    'We never *3*, *3*, *3*!'
   ]
 }

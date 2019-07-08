@@ -3,24 +3,28 @@ export default {
   path: '/georgi-song',
   verses: [
     {
-      word1: 'Gesh',
-      word2: 'Mesh'
+      word1: 'Геш',
+      word2: 'работа',
+      word3: 'кеш'
     },
     {
-      word1: 'kvo',
-      word2: 'yo'
+      word1: 'Янка',
+      word2: 'ставане',
+      word3: 'дрямка'
     },
     {
-      word1: 'Nik',
-      word2: 'click'
+      word1: 'Петър',
+      word2: 'мерене',
+      word3: 'метър'
     },
     {
-      word1: 'Asi',
-      word2: 'basi'
+      word1: 'Митка',
+      word2: 'ядене',
+      word3: 'питка'
     }
   ],
   lines: [
-    'Az se kazvam *1*, *1*.',
-    'Ti mi vikash *2*, *2*.'
+    'Здравейте всички, аз се казвам *1*',
+    'надъхан съм за *2*, но ми трябва *3*.'
   ]
 }
