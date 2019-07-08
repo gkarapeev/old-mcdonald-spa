@@ -2,38 +2,38 @@ import React, { useState, useEffect, Fragment } from 'react'
 import './Word.css'
 
 const Word = (props) => {
-  const { type, animal, index, change, custom } = props
+  const { verse, wordNum, wordValue, change } = props
   const [editing, toggleEditing] = useState(false)
-  const [newAnimal, setNewAnimal] = useState(animal)
-  useEffect(() => {setNewAnimal(props.animal)}, [props.animal])
+  const [newWord, setNewWord] = useState(wordValue)
+  useEffect(() => {setNewWord(wordValue)}, [wordValue])
   
   return (
     <Fragment>
       {editing ?
         <form onSubmit={(event) => {
-          change(event.target.firstChild.value, index, type)
           event.preventDefault()
+          change(verse, wordNum, event.target.firstChild.value)
           event.target.firstChild.blur()}}
         >
           <input
             type='text'
-            value={newAnimal[type]}
+            value={newWord}
             maxLength='8'
-            onChange={(e) => setNewAnimal({...animal, [type]: e.target.value})}
+            onChange={(e) => setNewWord(e.target.value)}
             className='word input'
-            style={{width: newAnimal[type].length * 0.5 + 0.8 + 'rem', maxWidth:'100px', minWidth:'40px'}}
+            style={{width: newWord.length * 0.5 + 0.8 + 'rem', maxWidth:'100px', minWidth:'40px'}}
             autoFocus
-            onBlur={(event) => {
-              change(event.target.value, index, type)
+            onBlur={(e) => {
+              change(verse, wordNum, e.target.value)
               toggleEditing(!editing)
             }}>
           </input>
         </form>
         :
         <span
-          onClick={custom ? () => null: toggleEditing(!editing)}
-          className={custom ? '' : 'word'}>
-          {newAnimal[type]}
+          onClick={() => toggleEditing(!editing)}
+          className={'word'}>
+          {newWord}
         </span>
       }
     </Fragment>

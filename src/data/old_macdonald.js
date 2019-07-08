@@ -1,4 +1,5 @@
-const old_macdonald = {
+export default {
+  title: 'The Old MacDonald Song',
   verses: [
     {
       word1: 'cow',
@@ -28,34 +29,4 @@ const old_macdonald = {
     'Here a *2*, there a *2*, ev’rywhere a *2* *2*.',
     'Old MacDonald had a farm, E-I-E-I-O.'
   ]
-}
-
-function Song(verses, lines) {
-  this.verses = verses
-  this.lines = lines
-
-  this.parseLine = function(verseIndex, lineIndex) {
-    const specialWord = /\*[0-9]+\*/g
-    var parsedLine = this.lines[lineIndex]
-
-    while ((match = specialWord.exec(parsedLine)) != null) {
-      let wordNumber = parseInt(match[0].replace('*', ''))
-      let chunk1 = parsedLine.slice(0, match.index)
-      let chunk2 = this.verses[verseIndex]['word' + wordNumber]
-      let chunk3 = parsedLine.slice(match.index + match[0].length)
-
-      parsedLine = chunk1 + chunk2 + chunk3
-    }
-
-    return parsedLine
-  }
-}
-
-const oldMc = new Song(old_macdonald.verses, old_macdonald.lines)
-
-for (let i=0; i < oldMc.verses.length; i++) {
-  for (let j=0; j < oldMc.lines.length; j++) {
-    console.log(oldMc.parseLine(i, j))
-  }
-  console.log('')
 }

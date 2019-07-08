@@ -1,64 +1,84 @@
 import React from 'react'
 import Nav from '../Nav/Nav'
 import Paper from '../Paper/Paper'
-import Verse from '../Verse/Verse'
-import getAnimals from '../../data/animal_list'
+import parseLine from '../../utils/parseLine'
 import './App.css'
+
+import old_macdonald from '../../data/old_macdonald'
+import georgi_song from '../../data/georgi_song'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      animals: getAnimals(),
-      customAnimals: getAnimals()
+      song: old_macdonald,
+      customSong: old_macdonald
     }
   }
 
-  handleChangeAnimal = (value, index, type) => {
-    let newAnimals = [...this.state.customAnimals]
-    newAnimals[index][type] = value
-    this.setState({ customAnimals: newAnimals })
+  handleWordChange = (verseIndex, wordNum, newValue) => {
+    let newSong = { ...this.state.customSong }
+    newSong.verses[verseIndex]['word' + wordNum] = newValue
+    
+    this.setState({ customSong: newSong })
   }
 
-  handleAddAnimal = () => {
-    let newAnimals = [...this.state.customAnimals]
-    newAnimals.push({ species: 'animal', sound: 'sound'})
-    this.setState({customAnimals: newAnimals})
+  generateVerses = (song) => {
+    let verses = []
+
+    for (let i = 0; i < song.verses.length; i++) {
+      let lines = []
+
+      for (let j = 0; j < song.lines.length; j++) {
+        lines.push(parseLine(i, j, song, this))
+      }
+
+      verses.push(lines)
+    }
+
+    return verses
   }
 
-  handleDeleteAnimal = (id) => {
-    let newAnimals = [...this.state.customAnimals]
-    newAnimals.splice(id, 1)
-    this.setState({ customAnimals: newAnimals })
-  }
 
   render() {
     // Rendering a song variant based on the route
     const custom = this.props.location.pathname === '/custom'
-    const renderAnimals = custom ? this.state.customAnimals : this.state.animals
+    const renderSong = custom ? this.state.customSong : this.state.song
 
     return (
       <div className="App">
         <Paper bg='white' classes={['song']}>
-          <h1>The Old MacDonald Song</h1>
+          <h1>{this.state.song.title}</h1>
           <Nav />
           <ul>
-            {renderAnimals.map((animal, index) => {
+            {this.generateVerses(renderSong).map((verse, index) => {
               return (
-                <li tabIndex={index + 2} key={index}>
-                  <Verse
-                    animal={animal}
-                    change={this.handleChangeAnimal}
-                    deleteAnimal={() => this.handleDeleteAnimal(index)}
-                    custom={custom}
-                    index={index}
-                />
+                <li key={index}>
+                  <div className={custom ? 'Verse Verse-custom' : 'Verse'}>
+                    {verse.map((line, idx) => {
+                      return (
+                        <span className='song-line' key={idx}>
+                          {line}
+                        </span>
+                      )
+                    })}
+                    {custom ?
+                      <div className='delete'>
+                        <svg className='edit-icon' id='delete-icon' viewBox='0 0 22 22'>
+                          <circle className="circle" cx="11" cy="11" r="10" />
+                          <line className="line line-1" x1="6" y1="11" x2="16" y2="11" />
+                          <line className="line line-2" x1="6" y1="11" x2="16" y2="11" />
+                        </svg>
+                      </div>
+                      : null
+                    }
+                  </div>
                 </li>
               )
             })}
           </ul>
           {custom ?
-            <div className='new-verse' onClick={this.handleAddAnimal} tabIndex={renderAnimals.length + 1}>
+            <div className='new-verse' onClick={this.handleAddAnimal} tabIndex={this.state.song.verses.length + 1}>
               <svg className='edit-icon' id='add-icon' viewBox='0 0 22 22'>
                 <circle className="plus-icon" cx="11" cy="11" r="10" />
                 <line className="plus-icon" x1="11" y1="6" x2="11" y2="16" />

@@ -4,20 +4,18 @@ import './Verse.css'
 
 
 const Verse = (props) => {
-  const { animal, index, custom, deleteAnimal } = props;
+  const { words } = props;
   
-  const classes = ['Verse']
-  if(custom) {
-    classes.push('Verse-custom')
-  }
+  // const classes = ['Verse']
+  // if(custom) {
+  //   classes.push('Verse-custom')
+  // }
+
+
 
   return(
     <div className={classes.join(' ')}>
-      <span className='song-line'>Old MacDonald had a farm, E-I-E-I-O,</span>
-      <span className='song-line'>And on his farm he had a <Word type='species' animal={animal} custom change={props.change} index={index}/>, E-I-E-I-O.</span>
-      <span className='song-line'>With a <Word type='sound' animal={animal} custom change={props.change} index={index}/> {animal.sound} here and a {animal.sound} there,</span>
-      <span className='song-line'>Here a {animal.sound}, there a  {animal.sound}, ev’rywhere a  {animal.sound}.</span>
-      <span className='song-line'>Old MacDonald had a farm, E-I-E-I-O</span>
+      
       {custom ?
         <div className='delete' onClick={deleteAnimal}>
           <svg className='edit-icon' id='delete-icon' viewBox='0 0 22 22'>
