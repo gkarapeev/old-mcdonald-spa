@@ -1,5 +1,5 @@
 export default {
-  title: 'The Old MacDonald Song',
+  title: 'Old MacDonald',
   path: '/old-macdonald',
   verses: [
     {
